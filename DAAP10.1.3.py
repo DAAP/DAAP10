@@ -566,13 +566,11 @@ def firstquartile(numlist):
         elif n % 4 == 1:
             lowanswer = a[int((n - 1)/4) - 1]
             highanswer = a[int((n - 1)/4)]
-            answer = lowanswer + (highanswer - lowanswer)/4
+            answer = (lowanswer + highanswer)/2
         elif n % 4 == 2:
             answer = a[int((n+2)/4) - 1]
         elif n % 4 == 3:
-            lowanswer = a[int((n - 3)/4)]
-            highanswer = a[int((n + 1)/4)]
-            answer = lowanswer + 3*(highanswer - lowanswer)/4
+            answer = a[int((n + 1)/4 - 1)]
     return answer
 
 
@@ -587,15 +585,13 @@ def thirdquartile(numlist):
             highanswer = a[int(3*n/4)]
             answer = (lowanswer + highanswer)/2
         elif n % 4 == 1:
-            lowanswer = a[int(3*(n - 1)/4) - 1]
-            highanswer = a[int(3*(n - 1)/4)]
-            answer = lowanswer + 3*(highanswer - lowanswer)/4
+            lowanswer = a[int(3*(n - 1)/4)]
+            highanswer = a[int(3*(n - 1)/4) + 1]
+            answer = (lowanswer + highanswer) / 2
         elif n % 4 == 2:
             answer = a[int(3*(n + 2)/4) - 2]
         elif n % 4 == 3:
-            lowanswer = a[int(3*(n - 3)/4)]
-            highanswer = a[int(3*(n + 1)/4)]
-            answer = lowanswer + (highanswer - lowanswer)/4
+            answer = a[int((3*n + 3)/4) - 1]
     return answer
 
 param = 100
